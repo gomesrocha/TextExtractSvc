@@ -23,7 +23,7 @@ public class Home {
 	}
 	
 	 */
-	@GetMapping("/extrator")
+	@GetMapping
 	public ResponseEntity<TokenDto> extrair(@RequestParam String texto){
 		return ResponseEntity.ok(new TokenDto(texto));
 	}

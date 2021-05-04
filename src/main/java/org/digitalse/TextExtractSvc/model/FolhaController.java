@@ -12,7 +12,7 @@ import org.digitalse.TextExtractSvc.dto.FolhaDto;
 public class FolhaController {
 	
 	
-	@GetMapping("/salario")
+	@GetMapping
 	public ResponseEntity<FolhaDto> calcular(@RequestParam float salario){
 		return ResponseEntity.ok(new FolhaDto(salario));
 	}

@@ -32,6 +32,18 @@ public class FolhaDto {
 	}
 	
 	public double getIrrf() {
+		double salariosinss = this.salario - getInss();
+		if(salariosinss < 1903.99) {
+			this.irrf = 0;
+		}else if(salariosinss > 1903.98 && salariosinss < 2826.66) {
+			this.irrf =salariosinss * 0.075;
+		}else if(salariosinss > 2826.65 && salariosinss < 3751.06) {
+			this.irrf =salariosinss * 0.15;
+		}else if(salariosinss > 3751.05 && salariosinss < 4664.69) {
+			this.irrf =salariosinss * 0.225;
+		}else if(salariosinss > 4664.68) {
+			this.irrf =salariosinss * 0.275;
+		}
 		return irrf;
 	}
 	

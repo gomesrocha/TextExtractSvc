@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
@@ -13,6 +14,7 @@ public class TokenProbDto {
 	private String texto;
 	private InputStream is;
 	private double[] probs;
+	private List<String> dados;
 	
 	public TokenProbDto(String texto) {
 		this.texto = texto;
@@ -22,7 +24,9 @@ public class TokenProbDto {
 			TokenizerME tk = new TokenizerME(tm);
 			Span tokens[] = tk.tokenizePos(texto);
 			probs = tk.getTokenProbabilities();
-			
+			for(Span token: tokens) {
+				dados.add(token + " " + texto.substring(token.getStart(), token.getEnd()));
+			}
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -33,6 +37,11 @@ public class TokenProbDto {
 		}
 		
 	}
+	
+	public List<String> getDados() {
+		return dados;
+	}
+
 	public String getTexto() {
 		return texto;
 	}

@@ -48,6 +48,7 @@ public class FolhaDto {
 	}
 	
 	public double getSalarioLiquido() {
+		this.salarioLiquido = this.salario - (getInss() + getIrrf());
 		return salarioLiquido;
 	}
 

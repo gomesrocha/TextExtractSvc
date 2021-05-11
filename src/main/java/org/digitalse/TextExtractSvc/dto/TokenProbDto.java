@@ -15,6 +15,7 @@ public class TokenProbDto {
 	private InputStream is;
 	private double[] probs;
 	private List<String> dados;
+	private Span tks[];
 	
 	public TokenProbDto(String texto) {
 		this.texto = texto;
@@ -24,7 +25,7 @@ public class TokenProbDto {
 			TokenizerME tk = new TokenizerME(tm);
 			Span tokens[] = tk.tokenizePos(texto);
 			probs = tk.getTokenProbabilities();
-			
+			this.tks = tokens;
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -37,6 +38,9 @@ public class TokenProbDto {
 	}
 	
 	public List<String> getDados() {
+		for(Span token: tks) {
+			dados.add(token + " " + texto.substring(token.getStart(), token.getEnd()));
+		}
 		return dados;
 	}
 

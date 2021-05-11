@@ -1,4 +1,4 @@
-package org.digitalse.TextExtractSvc.model;
+package org.digitalse.TextExtractSvc.control;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

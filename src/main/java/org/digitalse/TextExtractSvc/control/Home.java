@@ -1,4 +1,4 @@
-package org.digitalse.TextExtractSvc.model;
+package org.digitalse.TextExtractSvc.control;
 
 import org.digitalse.TextExtractSvc.dto.FolhaDto;
 import org.digitalse.TextExtractSvc.dto.TokenDto;

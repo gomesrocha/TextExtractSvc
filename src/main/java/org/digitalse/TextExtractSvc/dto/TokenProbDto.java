@@ -24,9 +24,7 @@ public class TokenProbDto {
 			TokenizerME tk = new TokenizerME(tm);
 			Span tokens[] = tk.tokenizePos(texto);
 			probs = tk.getTokenProbabilities();
-			for(Span token: tokens) {
-				dados.add(token + " " + texto.substring(token.getStart(), token.getEnd()));
-			}
+			
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

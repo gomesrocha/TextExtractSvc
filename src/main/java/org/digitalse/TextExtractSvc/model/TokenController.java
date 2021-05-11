@@ -17,7 +17,7 @@ public class TokenController {
 		return ResponseEntity.ok(new TokenDto(texto));
 		
 	}
-	@GetMapping("/teste")
+	@GetMapping("/prob")
 	public ResponseEntity<TokenProbDto> TokenizeProbText(@RequestParam String texto) {
 		return ResponseEntity.ok(new TokenProbDto(texto));
 		

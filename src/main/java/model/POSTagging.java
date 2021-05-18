@@ -26,7 +26,7 @@ public class POSTagging {
 
     public String tag(String text){
     	String resultado = "";
-        initialize("data/pt-pos-maxent.bin");
+        initialize("./data/pt-pos-maxent.bin");
         try {
             if (model != null) {
                 POSTaggerME tagger = new POSTaggerME(model);
@@ -52,7 +52,7 @@ public class POSTagging {
 
     public String[] detectSentences(String paragraph) throws IOException {
 
-        InputStream modelIn = getClass().getResourceAsStream("data/pt-sent.bin");
+        InputStream modelIn = getClass().getResourceAsStream("./data/pt-sent.bin");
         final SentenceModel sentenceModel = new SentenceModel(modelIn);
         modelIn.close();
 

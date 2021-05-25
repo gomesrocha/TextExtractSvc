@@ -9,10 +9,10 @@ import java.io.InputStream;
 import opennlp.tools.postag.POSModel;
 import opennlp.tools.postag.POSTaggerME;
 
-public class PosTaggerMeRB {
+public class PosTaggerMeBR {
 	private InputStream modelIn;
 	private String[] result;
-	public PosTaggerMeRB(String[] text) {
+	public PosTaggerMeBR(String[] text) {
 		POSModel model = null;
 		POSTaggerME tagger = null;
 		try {

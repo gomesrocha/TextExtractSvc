@@ -1,7 +1,7 @@
 package org.digitalse.TextExtractSvc.dto;
 
-import org.digitalse.TextExtractSvc.model.PosTaggerMeRB;
-import org.digitalse.TextExtractSvc.model.TextPreProcessing;
+import org.digitalse.TextExtractSvc.model.PosTaggerMeBR;
+import org.digitalse.TextExtractSvc.model.TextPreProcessingBR;
 
 import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.WhitespaceTokenizer;
@@ -10,15 +10,15 @@ public class TokenDto {
 	private String texto;
 	private String result[];
 	private String[] resultTag;
-	private PosTaggerMeRB ptmr = null;
-	private TextPreProcessing tpp = null;
+	private PosTaggerMeBR ptmr = null;
+	private TextPreProcessingBR tpp = null;
 	public TokenDto(String texto) {
 		this.texto = texto.toLowerCase();
 		Tokenizer tk = WhitespaceTokenizer.INSTANCE;
-		tpp = new TextPreProcessing();
+		tpp = new TextPreProcessingBR();
 		this.result = tk.tokenize(texto.toLowerCase());	
 		this.result = tpp.removeStopWords(this.result);
-		this.ptmr = new PosTaggerMeRB(result);
+		this.ptmr = new PosTaggerMeBR(result);
 		this.resultTag = ptmr.getResult();
 	}
 	

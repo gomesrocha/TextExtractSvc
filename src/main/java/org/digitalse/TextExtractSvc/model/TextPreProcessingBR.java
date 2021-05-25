@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-public class TextPreProcessing {
+public class TextPreProcessingBR {
 	private String[] defaultStopWords = {"a", "ao", "me", "mim", "ai", "ali", "e", "ou", "que", "para", "como", "aonde", "em", "o", "as"};
 	private static HashSet stopWords = new HashSet();
-	public TextPreProcessing() {
+	public TextPreProcessingBR() {
 		stopWords.addAll(Arrays.asList(defaultStopWords));
 	}
 	public String[] removeStopWords(String[] words) {

@@ -28,13 +28,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
-	
+	// Read - Ler
 	@GetMapping
 	public List<ProdutoDto> listar(){
 		List<Produto> produtos = produtoRepository.findAll();
 		return ProdutoDto.converter(produtos);
 				
 	}
+	// Create -- Cadastrar
 	@PostMapping
 	@Transactional
 	public void salvar(@RequestBody ProdutoForm produtoForm) {
@@ -43,13 +44,14 @@ public class ProdutoController {
 		
 		
 	}
+	// Delete -- Remover/apagar
 	@DeleteMapping("/{id}")
 	@Transactional
 	public ResponseEntity<ProdutoDto> apagar(@PathVariable Long id){
 		produtoRepository.deleteById(id);
 		return ResponseEntity.ok().build();
 	}
-	
+	//Update -- Atualizar
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<ProdutoDto> atualizar(@PathVariable Long id, @RequestBody AtualizaProdutoForm apf){

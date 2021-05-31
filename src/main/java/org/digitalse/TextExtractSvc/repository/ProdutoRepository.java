@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.digitalse.TextExtractSvc.entity.Produto;
 
-public interface ProdutoRepository extends JpaRepository<Produto, Long>{
-	//List<Produto> findByProdutoFornecedor(String fornecedor);
+public interface ProdutoRepository extends JpaRepository<Produto, Long>{	
 	
 }

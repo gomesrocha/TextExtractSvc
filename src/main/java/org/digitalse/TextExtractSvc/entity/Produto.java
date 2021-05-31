@@ -14,7 +14,10 @@ public class Produto {
 	private String nome;
 	private String fornecedor;
 
-	
+	public Produto(String nome, String fornecedor) {
+		this.setNome(nome);
+		this.setFornecedor(fornecedor);
+	}
 	
 	public Produto() {
 

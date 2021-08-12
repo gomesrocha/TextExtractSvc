@@ -8,6 +8,7 @@ public class TextPreProcessingBR {
 	private String[] defaultStopWords = {"a", "ao", "me", "mim", "ai", "ali", "e", "ou", "que", "para", "como", "aonde", "em", "o", "as"};
 	private static HashSet stopWords = new HashSet();
 	public TextPreProcessingBR() {
+		
 		stopWords.addAll(Arrays.asList(defaultStopWords));
 	}
 	public String[] removeStopWords(String[] words) {

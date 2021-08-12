@@ -8,6 +8,7 @@ public class TextExtractSvcApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TextExtractSvcApplication.class, args);
+		
 	}
 
 }
